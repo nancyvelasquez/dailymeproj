@@ -1,5 +1,5 @@
 {
-  "name": "react-boilerplate",
+  "name": "DailyMe",
   "version": "1.0.0",
   "description": "react-boilerplate",
   "main": "app/main.jsx",
@@ -11,14 +11,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/niLYu/simple-react-boilerplate.git"
+    "url": ""
   },
   "author": "Yu Lin",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/niLYu/simple-react-boilerplate/issues"
-  },
-  "homepage": "https://github.com/niLYu/simple-react-boilerplate#readme",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -30,6 +25,7 @@
   },
   "dependencies": {
     "body-parser": "^1.18.1",
+    "bulma": "^0.6.0",
     "express": "^4.15.4",
     "path": "^0.12.7",
     "react": "^15.6.1",

@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
+import Benefits from './Benefits'
 
 class Home extends Component {
   render() {
     return (
-      <div>Welcome to my app</div>
+      <section className="hero">
+        <Benefits />
+        <div className="container">
+          <div className="notification">
+            <a className="button is-large centeredElements">Get Started</a>
+          </div>
+        </div>
+      </section>
     );
   }
 }

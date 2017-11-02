@@ -1,0 +1,40 @@
+section.hero {
+    background-color: #f5f5f5;
+}
+
+.navbar-brand {
+    padding-bottom: 40px;
+    background-color: #f5f5f5;
+}
+
+.navbar-item {
+    float: right;
+}
+
+.navbar-item img {
+    max-height: 7rem; 
+    text-align: center;
+ }
+
+ .form {
+    background-color: #f5f5f5;
+ }
+
+.tile.is-ancestor {
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-bottom: 20px;
+}
+
+.centeredElements {
+    display: flex;
+    vertical-align: middle;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: #00897B;
+    color: white;
+}
+
+a:hover { 
+    background-color: #DCDCDC;
+}
