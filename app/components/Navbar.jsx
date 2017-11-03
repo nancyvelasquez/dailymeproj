@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Benefits from './Benefits'
+import { NavLink } from 'react-router-dom'
 
 class Navbar extends Component {
   render() {
@@ -7,19 +7,17 @@ class Navbar extends Component {
       <nav classNameName="navbar is-transparent is-centered">
         <div className="navbar-brand">
           <a className="navbar-item">
-            <img src="./images/medailylogo.png" alt="MeDaily: Know what you did when you did it"/>
+            <img src="./images/medailylogo.png" alt="MeDaily: Know what you did when you did it" />
           </a>
           <div className="navbar-item">
-            <div classNameName="field is-grouped">
-              <p className="control">
-                <a className="button is-primary">
+                <NavLink className="navbar-item" to='/login'>
+                <a className="button is-primary is-large">
                   <span>Login</span>
                 </a>
-              </p>
-            </div>
+                </NavLink>
           </div>
-      </div>
-    </nav >
+        </div>
+      </nav >
     );
   }
 }
