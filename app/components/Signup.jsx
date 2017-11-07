@@ -1,33 +1,61 @@
 
 import React, { Component } from 'react';
 
-function Signup() {
+function Signup () {
   return (
-    <div className="container">
-      <div className="notification">
-        <div className="form">
-          <div className="field">
-            <label className="label is-medium">Signup</label>
-            <div className="control has-icons-left has-icons-right">
-              <input className="input is-medium" type="email" placeholder="Username" />
-              <span className="icon is-small is-left">
-                <i className="fa fa-envelope"></i>
-              </span>
-            </div>
-          </div>
-
-          <div className="field">
-            <div className="control has-icons-left has-icons-right">
-              <input className="input is-medium" type="email" placeholder="Password" />
-              <span className="icon is-left">
-                <i className="fa fa-envelope"></i>
-              </span>
-            </div>
-          </div>
+    <div className="form-container">
+    <div className="field is-horizontal right-space">
+    <div className="field-label is-normal">
+      <label className="label">Full Name</label>
+    </div>
+    <div className="field-body">
+      <div className="field">
+        <p className="control is-expanded has-icons-left">
+          <input className="input" type="text" placeholder="Name"></input>
+          <span className="icon is-small is-left">
+            <i className="fa fa-user"></i>
+          </span>
+        </p>
+      </div>
+      <div className="field">
+        <p className="control is-expanded has-icons-left has-icons-right">
+          <input className="input" type="email" placeholder="Last Name"></input>
+          <span className="icon is-small is-left">
+            <i className="fa fa-user"></i>
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <div className="field is-horizontal right-space">
+    <div className="field-label is-normal">
+      <label className="label">Email</label>
+    </div>
+    <div className="field-body">
+      <div className="field">
+        <div className="control">
+          <input className="input" type="text" placeholder=""></input>
         </div>
       </div>
     </div>
-  );
+  </div>
+  
+  <div className="field is-horizontal">
+    <div className="field-label">
+    </div>
+    <div className="field-body">
+      <div className="field">
+        <div className="control">
+          <button className="button is-primary">
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  )
 }
 
 export default Signup;
