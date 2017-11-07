@@ -1,19 +1,21 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 import Benefits from './Benefits'
+import Signup from './Signup'
 
-class Home extends Component {
-  render() {
-    return (
-      <section className="hero">
-        <Benefits />
-        <div className="container">
-          <div className="notification">
-            <a className="button is-large centeredElements">Get Started</a>
-          </div>
+function Home() {
+  return (
+    <section className="hero">
+      <Benefits />
+      <div className="container">
+        <div className="notification">
+          <NavLink className="navbar-item" to='/signup'>
+            <div className="button is-large centeredElements">Get Started</div>
+          </NavLink>
         </div>
-      </section>
-    );
-  }
+      </div>
+    </section>
+  );
 }
 
-export default Home;
+export default Home

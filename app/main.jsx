@@ -5,21 +5,11 @@ import { Provider } from 'react-redux';
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import Login from './components/Login'
+import Signup from './components/Signup'
 
 import store from './store';
 import Home from './components/Home';
 import NotFound from './components/NotFound';
-
-// render(
-//   <Provider store={store}>
-//     <Router>
-
-//     </Router>
-//     <Footer />
-//   </Provider>,
-//   document.getElementById('app'),
-// );
-
 
 const MeDaily = ({ user, children }) => (
   <div>
@@ -28,6 +18,7 @@ const MeDaily = ({ user, children }) => (
     <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
+        <Route path="/signup" component={Signup} />
         <Route path="*" component={NotFound} />
     </Switch>
 
