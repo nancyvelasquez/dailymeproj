@@ -2,9 +2,23 @@ section.hero {
     background-color: #f5f5f5;
 }
 
+.container {
+    background-color: #f5f5f5;    
+}
+
 .navbar-brand {
     padding-bottom: 40px;
-    background-color: #f5f5f5;
+    /* justify-content: center; */
+}
+
+.is-centered {
+    background-color: #f5f5f5;    
+    justify-content: center;    
+}
+
+div.notification {
+    justify-content: center;
+    vertical-align: middle;    
 }
 
 .navbar-item {
@@ -12,13 +26,13 @@ section.hero {
 }
 
 .navbar-item img {
-    max-height: 7rem; 
+    max-height: 7rem;
     text-align: center;
- }
+}
 
- .form {
+.form {
     background-color: #f5f5f5;
- }
+}
 
 .tile.is-ancestor {
     margin-left: 5%;
@@ -33,8 +47,14 @@ section.hero {
     margin-right: 5%;
     background-color: #00897B;
     color: white;
+    width: 50em;
+    text-decoration: none;
 }
 
-a:hover { 
+.centeredElements:hover {
+    color: white;
+}
+
+a:hover {
     background-color: #DCDCDC;
 }
