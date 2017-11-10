@@ -4,7 +4,7 @@
 //   , debug = require('debug')(`${app.name}:oauth`)
 //   , { STRING, JSON } = require('sequelize')
 
-// module.exports = db => {
+// // module.exports = db => {
 //   const OAuth = db.define('oauths', {
 //     uid: STRING,
 //     provider: STRING,
@@ -90,15 +90,9 @@
 //       debug('initializing provider:%s', provider)
 
 //       passport.use(new strategy(config, oauth))
-//     }
+//     // }
 
-//   return OAuth
+//   // return OAuth
 // }
 
-// module.exports.associations = (OAuth, { User }) => {
-//   // Create a static association between the OAuth and User models.
-//   // This lets us refer to OAuth.User above, when we need to create
-//   // a user.
-//   OAuth.User = User
-//   OAuth.belongsTo(User)
-// }
+// module.exports = OAuth

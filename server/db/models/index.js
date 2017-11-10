@@ -6,6 +6,9 @@ const Entry = require('./entry')
 Entry.belongsTo(User)
 User.hasMany(Entry, { onDelete: 'CASCADE' })
 
+// OAuth.User = User
+// OAuth.belongsTo(User)
+
 module.exports = {
   db,
   User,

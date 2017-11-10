@@ -2,7 +2,7 @@
   "name": "DailyMe",
   "version": "1.0.0",
   "description": "react-boilerplate",
-  "main": "client/main.jsx",
+  "main": "app/main.jsx",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack -w",
     "start": "node server",

@@ -34,7 +34,7 @@ const User = db.define('users', {
 
   password: VIRTUAL,
 
-  address: STRING,
+  // address: STRING,
 
 }, {
   indexes: [{

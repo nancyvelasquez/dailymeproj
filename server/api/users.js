@@ -9,6 +9,24 @@ router.get('/', (req, res, next) => {
     // send everything to anyone who asks!
     attributes: ['id', 'email']
   })
-    .then(users => res.json(users))
+    .then(users => {
+        console.log('got users')
+        res.json(users)
+    })
+    .catch(next)
+})
+
+router.post('/signup', (req, res, next) => {
+    User.findOrCreate({
+        where: { email: req.body.email }
+    })
+    .spread((user, created) => {
+        if (!created) {
+            res.redirect('/login')
+        } else {
+            console.log('created!')
+            res.redirect('/')
+        }
+    })
     .catch(next)
 })
