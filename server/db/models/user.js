@@ -4,7 +4,8 @@ const bcrypt = require('bcryptjs'),
     STRING,
     ARRAY,
     VIRTUAL,
-    INTEGER
+    INTEGER,
+    BOOLEAN
   } = require('sequelize')
 const db = require('../db');  
 
@@ -28,6 +29,10 @@ const User = db.define('users', {
       isEmail: true,
       notEmpty: true
     }
+  },
+
+  isAdmin: {
+    type: BOOLEAN,
   },
 
   password_digest: STRING,
