@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const {User} = require('../db/models')
+const {mustBeLoggedIn, forbidden, assertAdmin, selfOnly, throwError} = require('./auth.filters')
 module.exports = router
 
 router.get('/', (req, res, next) => {
@@ -17,7 +18,6 @@ router.get('/', (req, res, next) => {
 })
 
 router.post('/signup', (req, res, next) => {
-    console.log('typeof stuff', typeof req.body, req.body.firstName)
     User.findOrCreate({
         where: { email: req.body.email }, 
         defaults: req.body,
