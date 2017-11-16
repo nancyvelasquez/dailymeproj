@@ -21,6 +21,7 @@
     "babel-preset-react-app": "^3.0.3",
     "cross-env": "^5.0.5",
     "nodemon": "^1.12.1",
+    "url-loader": "^0.6.2",
     "webpack": "^3.6.0",
     "webpack-livereload-plugin": "^0.11.0"
   },

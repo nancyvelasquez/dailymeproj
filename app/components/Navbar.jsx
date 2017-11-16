@@ -7,10 +7,10 @@ function Navbar() {
       <div className="navbar-brand">
         <NavLink className="navbar-item" to='/'>
           <div className="navbar-item">
-            <img src="./images/medailylogo.png" alt="MeDaily: Know what you did when you did it" />
+            <img src="./images/medaily_transp.png" alt="MeDaily: Know what you did when you did it" />
           </div>
         </NavLink>
-        <span className="is-divider"></span>
+        {/* <span className="is-divider"></span> */}
       </div>
       <div className="navbar-end">
         <div className="navbar-item">
