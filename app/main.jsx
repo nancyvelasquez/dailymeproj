@@ -13,7 +13,7 @@ import NotFound from './components/NotFound';
 
 const MeDaily = ({ user, children }) => (
   <div>
-    <Navbar />
+    {/* <Navbar /> */}
 
     <Switch>
         <Route exact path="/" component={Home} />

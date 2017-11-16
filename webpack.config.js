@@ -4,7 +4,7 @@ const productionMode = require('./index.js').isProduction;
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './client/main.jsx',
+  entry: './app/main.jsx',
   output: {
     path: __dirname,
     filename: './public/bundle.js',
@@ -23,6 +23,17 @@ module.exports = {
           presets: ['react-app'],
         },
       },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192
+            }
+          }
+        ]
+      }
     ],
   },
   plugins: productionMode

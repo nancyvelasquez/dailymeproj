@@ -2,7 +2,7 @@
   "name": "DailyMe",
   "version": "1.0.0",
   "description": "react-boilerplate",
-  "main": "client/main.jsx",
+  "main": "app/main.jsx",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack -w",
     "start": "node server",
@@ -21,6 +21,7 @@
     "babel-preset-react-app": "^3.0.3",
     "cross-env": "^5.0.5",
     "nodemon": "^1.12.1",
+    "url-loader": "^0.6.2",
     "webpack": "^3.6.0",
     "webpack-livereload-plugin": "^0.11.0"
   },
