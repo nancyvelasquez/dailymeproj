@@ -1,26 +1,23 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom'
 
-function Navbar() {
+const Navbar = () => {
   return (
     <nav className="navbar is-transparent">
       <div className="navbar-brand">
         <NavLink className="navbar-item" to='/'>
           <div className="navbar-item">
-            <img src="./images/medaily_transp.png" alt="MeDaily: Know what you did when you did it" />
+            <img src="./images/medailylogo.png" alt="MeDaily: Know what you did when you did it" />
           </div>
         </NavLink>
-        {/* <span className="is-divider"></span> */}
       </div>
       <div className="navbar-end">
-        <div className="navbar-item">
-          <p className="control">
+      <div className="navbar-item">
             <NavLink className="navbar-item" to="/login">
               <div className="button is-primary is-medium">
                 <span>Login</span>
               </div>
             </NavLink>
-          </p>
         </div>
       </div>
     </nav>
