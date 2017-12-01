@@ -13,8 +13,8 @@ import NotFound from './components/NotFound';
 
 const MeDaily = ({ user, children }) => (
   <div>
-    {/* <Navbar /> */}
-
+    {/* { !window.location.href.split()[0].endsWith('/') && <Navbar /> } */}
+    <Navbar />
     <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
