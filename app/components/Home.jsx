@@ -4,6 +4,7 @@ import Benefits from './Benefits'
 import Navbar from './Navbar'
 
 const Home = () => {
+  console.log('this.props',this.props)
     return (
       <section className="hero is-info is-large" >
         <div className="hero-body heroImage" id="bigImage">
@@ -31,15 +32,3 @@ const Home = () => {
 }
 
 export default Home
-
-
-  // < section className= "hero" >
-  //   <Benefits />
-  //   <div className="container">
-  //     <div className="notification">
-  //       <NavLink className="navbar-item" to='/signup'>
-  //         <div className="button is-large centeredElements">Get Started</div>
-  //       </NavLink>
-  //     </div>
-  //   </div>
-  //   </section >

@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { getUser, auth } from '../reducers/user';
+import { me } from '../reducers/user';
 
 class Signup extends Component {
   constructor(props) {
@@ -25,8 +25,7 @@ class Signup extends Component {
         <div className="formBackground">
           <div className="formContainer">
             <h1 className="title">Sign up</h1>
-            <a href="/auth/google" className="button is-danger signupButton"><i className="fa fa-google" aria-hidden="true"></i>   |   Sign up with Google</a>
-            <hr></hr>
+            <a onClick={ this.props.me } className="button is-danger signupButton"><i className="fa fa-google" aria-hidden="true"></i>   |   Sign up with Google</a>
             <form
               className="field"
               onSubmit={event => {
@@ -78,18 +77,20 @@ class Signup extends Component {
 
 /* ----------------- REDUX ----------------- */
 
-const mapDispatch = dispatch => {
-  return {
-    getUser(state) {
-      //evt.preventDefault()
-      const firstname = state.firstname
-      const lastname = state.lastname
-      const email = state.email
-      const password = state.password
-      console.log(firstname, lastname, email, password)
-      dispatch(auth(email, password, firstname, lastname))
-    }
-  }
-}
+const mapDispatch = ({ me })
+
+// const mapDispatch = dispatch => {
+//   return {
+    // getUser(state) {
+    //   //evt.preventDefault()
+    //   const firstname = state.firstname
+    //   const lastname = state.lastname
+    //   const email = state.email
+    //   const password = state.password
+    //   console.log(firstname, lastname, email, password)
+    //   dispatch(auth(email, password, firstname, lastname))
+    // }
+//   }
+// }
 
 export default connect(null, mapDispatch)(Signup)

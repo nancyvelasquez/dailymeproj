@@ -58,7 +58,7 @@ if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
           googleId,          
           firstName: foundUser.firstName || profile.name.givenName,
           lastName: foundUser.lastName || profile.name.familyName,
-          photo: foundUser.photo || photo,
+          photo: foundUser.photo || null,
         }, {
           where: { id: foundUser.id },
           returning: true
@@ -76,7 +76,7 @@ if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
   }))
 
   router.get('/callback', passport.authenticate('google', {
-    successRedirect: '/home',
+    successRedirect: '/',
     failureRedirect: '/login'
   }))
 

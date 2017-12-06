@@ -6,8 +6,8 @@ function Footer() {
       <div className="container">
         <div className="content has-text-centered">
           <p>
-            <strong>MeDaily</strong> by Nancy Velasquez. The source code is licensed
-                <a href="http://opensource.org/licenses/mit-license.php"> MeDaily</a>.
+            Le Daily Moi by Nancy Velasquez. The source code is licensed
+                <a href="https://github.com/nancyvelasquez/dailymeproj"> Le Daily Moi</a>.
             </p>
         </div>
       </div>

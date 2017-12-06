@@ -13,7 +13,6 @@ import NotFound from './components/NotFound';
 
 const MeDaily = ({ user, children }) => (
   <div>
-    {/* { !window.location.href.split()[0].endsWith('/') && <Navbar /> } */}
     <Navbar />
     <Switch>
         <Route exact path="/" component={Home} />
@@ -21,7 +20,6 @@ const MeDaily = ({ user, children }) => (
         <Route path="/signup" component={Signup} />
         <Route path="*" component={NotFound} />
     </Switch>
-
     <Footer />
   </div>
 )
@@ -29,7 +27,7 @@ const MeDaily = ({ user, children }) => (
 render(
   <Provider store={store}>
     <Router>
-      <MeDaily />
+      <MeDaily/>
     </Router>
   </Provider>,
   document.getElementById('app')

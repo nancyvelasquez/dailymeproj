@@ -14,3 +14,6 @@ const store = createStore(
 );
 
 export default store;
+
+import {me} from './reducers/user'
+store.dispatch(me())
