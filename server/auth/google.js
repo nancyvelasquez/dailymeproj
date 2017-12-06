@@ -1,7 +1,9 @@
 const passport = require('passport')
 const router = require('express').Router()
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy
-const {User} = require('../db/models')
+const {
+  User
+} = require('../db/models')
 module.exports = router
 
 /**
@@ -32,24 +34,49 @@ if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
 
   const strategy = new GoogleStrategy(googleConfig, (token, refreshToken, profile, done) => {
     const googleId = profile.id
-    const name = profile.displayName
+    const firstName = profile.name.givenName;
+    const lastName = profile.name.familyName;
     const email = profile.emails[0].value
+    const photo = profile._json.image && profile._json.image.url || profile._json.picture
 
-    User.find({where: {googleId}})
-      .then(foundUser => (foundUser
-        ? done(null, foundUser)
-        : User.create({name, email, googleId})
-          .then(createdUser => done(null, createdUser))
+    User.find({
+        where: {
+          email
+        }
+      })
+      .then(foundUser => (!foundUser ?
+        User.create({
+          firstName,
+          lastName,
+          email,
+          googleId, 
+          photo
+        })
+        .then(createdUser => done(null, createdUser)) :
+        !foundUser.googleId ?
+        User.update({
+          googleId,          
+          firstName: foundUser.firstName || profile.name.givenName,
+          lastName: foundUser.lastName || profile.name.familyName,
+          photo: foundUser.photo || photo,
+        }, {
+          where: { id: foundUser.id },
+          returning: true
+        })
+        .spread((rowCount, updatedUser) => updatedUser[0]) :
+        done(null, foundUser)
       ))
       .catch(done)
   })
 
   passport.use(strategy)
 
-  router.get('/', passport.authenticate('google', {scope: 'email'}))
+  router.get('/', passport.authenticate('google', {
+    scope: 'email'
+  }))
 
   router.get('/callback', passport.authenticate('google', {
-    successRedirect: '/',
+    successRedirect: '/home',
     failureRedirect: '/login'
   }))
 

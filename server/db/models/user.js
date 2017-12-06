@@ -1,74 +1,68 @@
-'use strict'
-const bcrypt = require('bcryptjs'),
-  {
-    STRING,
-    ARRAY,
-    VIRTUAL,
-    INTEGER,
-    BOOLEAN
-  } = require('sequelize')
-const db = require('../db');  
+const crypto = require('crypto')
+const Sequelize = require('sequelize')
+const db = require('../db')
 
-const User = db.define('users', {
-
+const User = db.define('user', {
   firstName: {
-    type: STRING,
-    allowNull: false
+    type: Sequelize.STRING,
+    allowNull: false    
   },
-
   lastName: {
-    type: STRING,
+    type: Sequelize.STRING,
     allowNull: false
   },
-
   email: {
-    type: STRING,
-    allowNull: false,
+    type: Sequelize.STRING,
     unique: true,
-    validate: {
-      isEmail: true,
-      notEmpty: true
-    }
+    allowNull: false
   },
-
-  isAdmin: {
-    type: BOOLEAN,
+  photo: {
+    type: Sequelize.STRING,
   },
-
-  password_digest: STRING,
-
-  password: VIRTUAL,
-
-  // address: STRING,
-
-}, {
-  indexes: [{
-    fields: ['email'],
-    unique: true
-  }],
-  hooks: {
-    beforeCreate: setEmailAndPassword,
-    beforeUpdate: setEmailAndPassword,
+  password: {
+    type: Sequelize.STRING
   },
-  defaultScope: {
-    attributes: {
-      exclude: ['password_digest']
-    }
+  salt: {
+    type: Sequelize.STRING
   },
-  instanceMethods: {
-    // This method is a Promisified bcrypt.compare
-    authenticate(plaintext) {
-      return bcrypt.compare(plaintext, this.password_digest)
-    }
+  googleId: {
+    type: Sequelize.STRING
   }
 })
 
-function setEmailAndPassword(user) {
-  user.email = user.email && user.email.toLowerCase()
-  if (!user.password) return Promise.resolve(user)
+module.exports = User
 
-  return bcrypt.hash(user.get('password'), 10)
-    .then(hash => user.set('password_digest', hash))
+/**
+ * instanceMethods
+ */
+User.prototype.correctPassword = function (candidatePwd) {
+  return User.encryptPassword(candidatePwd, this.salt) === this.password
 }
 
-module.exports = User
+/**
+ * classMethods
+ */
+User.generateSalt = function () {
+  return crypto.randomBytes(16).toString('base64')
+}
+
+User.encryptPassword = function (plainText, salt) {
+  return crypto
+    .createHash('RSA-SHA256')
+    .update(plainText)
+    .update(salt)
+    .digest('hex')
+}
+
+/**
+ * hooks
+ */
+const setSaltAndPassword = user => {
+  if (user.changed('password')) {
+    user.salt = User.generateSalt()
+    user.password = User.encryptPassword(user.password, user.salt)
+  }
+}
+
+User.beforeCreate(setSaltAndPassword)
+User.beforeUpdate(setSaltAndPassword)

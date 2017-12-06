@@ -1,19 +1,22 @@
 
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import { getUser, auth } from '../reducers/user';
 
 class Signup extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      firstname: '',
+      lastname: '',
       email: '',
       password: ''
     }
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleInput = this.handleInput.bind(this)
   }
 
-  handleSubmit() {
-    event.preventDefault()
-    console.log('hey this is happening')
+  handleInput(evt) {
+    this.setState({ [evt.target.name]: evt.target.value })
   }
 
   render() {
@@ -22,44 +25,49 @@ class Signup extends Component {
         <div className="formBackground">
           <div className="formContainer">
             <h1 className="title">Sign up</h1>
-            <form className="field" onSubmit={this.handleSubmit}>
+            <a href="/auth/google" className="button is-danger signupButton"><i className="fa fa-google" aria-hidden="true"></i>   |   Sign up with Google</a>
+            <hr></hr>
+            <form
+              className="field"
+              onSubmit={event => {
+                event.preventDefault()
+                this.props.getUser(this.state)
+            }}>
               <label className="label">First Name</label>
               <input
+                name="firstname"
                 className="input"
-                type="text"
+                type="firstname"
                 placeholder="Enter first name"
-              /* value={this.state.email} */
-              /* onChange={this.handleEmailChange} */
+                onChange={this.handleInput}
               />
               <label className="label">Last Name</label>
               <input
+                name="lastname"
                 className="input"
-                type="text"
+                type="lastname"
                 placeholder="Enter last name"
-              /* value={this.state.email} */
-              /* onChange={this.handleEmailChange} */
+                onChange={this.handleInput}
               />
               <label className="label">Email</label>
               <input
+                name="email"
                 className="input"
-                type="password"
+                type="email"
                 placeholder="Enter email"
-              /* value={this.state.password} */
-              /* onChange={this.handlePasswordChange} */
+                onChange={this.handleInput}
               />
               <label className="label">Password</label>
               <input
+                name="password"
                 className="input"
                 type="password"
                 placeholder="Enter password"
-                value={this.state.password}
-              /* onChange={this.handlePasswordChange} */
+                onChange={this.handleInput}
               />
-              <div className="control">
-                <a className="button is-info signupButton">Sign up</a>
                 <br></br>
-                <a className="button is-danger signupButton"><i className="fa fa-google" aria-hidden="true"></i>   |   Sign up with Google</a>
-              </div>
+                <hr></hr>
+                <button className="button is-info signupButton" type="submit">Sign up</button>
             </form>
           </div>
         </div>
@@ -68,4 +76,20 @@ class Signup extends Component {
   }
 }
 
-export default Signup;
+/* ----------------- REDUX ----------------- */
+
+const mapDispatch = dispatch => {
+  return {
+    getUser(state) {
+      //evt.preventDefault()
+      const firstname = state.firstname
+      const lastname = state.lastname
+      const email = state.email
+      const password = state.password
+      console.log(firstname, lastname, email, password)
+      dispatch(auth(email, password, firstname, lastname))
+    }
+  }
+}
+
+export default connect(null, mapDispatch)(Signup)
