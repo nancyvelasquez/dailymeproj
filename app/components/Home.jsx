@@ -8,8 +8,6 @@ const Home = () => {
     return (
       <section className="hero is-info is-large" >
         <div className="hero-body heroImage" id="bigImage">
-          {/* <Navbar /> */}
-          {/* <img src="./images/bruno-cervera-368199.png" alt="Organization by Bruno Cervera" /> */}
           <div className="container">
             <h1 className="title homepage">
               Know what you did, when you did it
