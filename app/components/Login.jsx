@@ -1,37 +1,34 @@
 
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import { me } from '../reducers/user';
 
-function Login() {
-  return (
-    <div className="block">
+class Login extends Component {
+
+  render() {
+    return (
+      <div className="block">
         <div className="formBackground">
           <div className="formContainer">
-            <h1 className="title">Login</h1>
-            <form className="field">
-              <label className="label">Name</label>
-              <input
-                className="input"
-                type="text"
-                placeholder="Enter email"
-                // value={this.state.email}
-              /* onChange={this.handleEmailChange} */
-              />
-              <label className="label">Password</label>
-              <input
-                className="input"
-                type="password"
-                placeholder="Enter password"
-                // value={this.state.password}
-              /* onChange={this.handlePasswordChange} */
-              />
-              <div className="control">
-                <button className="button is-link">Signup</button>
-              </div>
+            <h1 className="title">Log In</h1>
+            <a onClick={ this.props.me } className="button is-danger signupButton"><i className="fa fa-google" aria-hidden="true"></i>   |  Log in with Google</a>
+            <form
+              className="field"
+              onSubmit={event => {
+                event.preventDefault()
+                this.props.getUser(this.state)
+            }}>
+                <br></br>
             </form>
           </div>
         </div>
       </div>
-  );
+    )
+  }
 }
 
-export default Login;
+/* ----------------- REDUX ----------------- */
+
+const mapDispatch = ({ me })
+
+export default connect(null, mapDispatch)(Login)
