@@ -32,10 +32,10 @@ export const me = () =>
 export const auth = () => // previous arguments included email, password and method
   dispatch =>
     // axios.post(`/auth/${method}`, { email, password })
-    axios.post(`/auth/google`)
+    axios.get(`/auth/google`)
       .then(res => {
         dispatch(getUser(res.data))
-        history.push('/')
+        // history.push('/')
       })
       .catch(error =>
         dispatch(getUser({error})))

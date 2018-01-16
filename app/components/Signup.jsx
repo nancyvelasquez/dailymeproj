@@ -1,7 +1,6 @@
-
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { me } from '../reducers/user';
+import { me, auth } from '../reducers/user';
 
 class Signup extends Component {
   constructor(props) {
@@ -25,7 +24,7 @@ class Signup extends Component {
         <div className="formBackground">
           <div className="formContainer">
             <h1 className="title">Sign up</h1>
-            <a onClick={ this.props.me } className="button is-danger signupButton"><i className="fa fa-google" aria-hidden="true"></i>   |   Sign up with Google</a>
+            <a onClick={ this.props.auth } className="button is-danger signupButton"><i className="fa fa-google" aria-hidden="true"></i>   |   Sign up with Google</a>
             <form
               className="field"
               onSubmit={event => {
@@ -77,7 +76,7 @@ class Signup extends Component {
 
 /* ----------------- REDUX ----------------- */
 
-const mapDispatch = ({ me })
+const mapDispatch = ({ auth })
 
 // const mapDispatch = dispatch => {
 //   return {

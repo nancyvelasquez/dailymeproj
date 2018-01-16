@@ -39,6 +39,8 @@ if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
     const email = profile.emails[0].value
     const photo = profile._json.image && profile._json.image.url || profile._json.picture
 
+    console.log('I am in Google')
+
     User.find({
         where: {
           email
@@ -68,7 +70,7 @@ if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
       ))
       .catch(done)
   })
-
+  
   passport.use(strategy)
 
   router.get('/', passport.authenticate('google', {
