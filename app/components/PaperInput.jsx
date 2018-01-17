@@ -17,7 +17,7 @@ class PaperInput extends Component {
     return (
       <section className={sectionClassName}>
         <div className="container">
-          <FroalaEditor tag='textarea' config={this.config} />
+          <FroalaEditor tag="textarea" config={this.config} />
         </div>
       </section>
     );

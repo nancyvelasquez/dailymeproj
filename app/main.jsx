@@ -1,6 +1,13 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+import 'froala-editor/js/froala_editor.pkgd.min.js';
+import 'froala-editor/css/froala_style.min.css';
+import 'froala-editor/css/froala_editor.pkgd.min.css';
+import $ from 'jquery';
+window.$ = $;
+
 import { Provider } from 'react-redux';
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
