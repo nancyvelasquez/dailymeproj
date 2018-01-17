@@ -15,11 +15,23 @@ class Navbar extends Component {
         </div>
         <div className="navbar-end">
           <div className="navbar-item">
-            <NavLink className="navbar-item" to="/login">
-              <div className="button is-primary is-medium">
-                <span>Login</span>
-              </div>
-            </NavLink>
+            {
+              this.props.user.firstName ? (
+                <div className="dropdown">
+                  <h1>Hi, {this.props.user.firstName}!</h1>
+                  <span className="userPhoto dropbtn" style={{ backgroundImage: `url(${this.props.user.photo})` }}></span>
+                  <div className="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                  </div>
+                </div>
+              ) : (
+                  <NavLink className="navbar-item" to="/login">
+                    <h1><strong>login</strong></h1>
+                  </NavLink>
+                )
+            }
           </div>
         </div>
       </nav>
