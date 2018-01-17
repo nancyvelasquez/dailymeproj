@@ -18,7 +18,7 @@ class Navbar extends Component {
             {
               this.props.user.firstName ? (
                 <div className="dropdown">
-                  <h1>Hi, {this.props.user.firstName}!</h1>
+                  <span className="greeting">Hi, {this.props.user.firstName}!</span>
                   <span className="userPhoto dropbtn" style={{ backgroundImage: `url(${this.props.user.photo})` }}></span>
                   <div className="dropdown-content">
                     <a href="#">Link 1</a>
