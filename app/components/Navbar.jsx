@@ -20,13 +20,14 @@ class Navbar extends Component {
                   <span className="navbar-greeting">Hi, {this.props.user.firstName}!</span>
                   <span className="navbar-user-photo dropbtn" style={{ backgroundImage: `url(${this.props.user.photo})` }}></span>
                   <div className="dropdown-content">
-                    <a href="#">Today</a>
+                    <a href="/home">Today</a>
                     <a href="#">Settings</a>
+                    <a href="/auth/logout">Logout</a>
                   </div>
                 </div>
               ) : (
                   <NavLink className="navbar-item" to="/login">
-                    <h1><strong>login</strong></h1>
+                    <span className="navbar-greeting">Login</span>
                   </NavLink>
                 )
             }

@@ -7,28 +7,38 @@ import FroalaEditor from 'react-froala-wysiwyg';
 class PaperInput extends Component {
   constructor(props) {
     super(props);
-    this.state = {}
-    // this.submitEntry = this.submitEntry.bind(this);
+    this.state = {
+      model: ''
+    }
+    this.handleModelChange = this.handleModelChange.bind(this)
+    this.submitModel = this.submitModel.bind(this)
   }
 
-  // submitEntry(evt) {
-  //   <script>
-  //     $('div#froala-editor').froalaEditor('html.get');
-  //   </script>
-  // }
+  handleModelChange (model) {
+    console.log('this is the model', model)
+    this.setState({
+      model: model
+    })
+  }
+
+  submitModel (evt) {
+    console.log('this is being submitted', this.state.model)
+  }
 
   render() {
     return (
       <section>
         <div className="container">
-          <FroalaEditor tag="textarea" config={this.config} />
+          <FroalaEditor tag="textarea" entry={this.state.model} config={this.config} onModelChange={this.handleModelChange}/>
         </div>
-        <NavLink to="/signup">
-          <button className="button is-primary is-small" onClick={this.submitEntry}>
-            <span>Submit</span>
+        <div className="paperinput-entry">
+        {/* <NavLink to="/signup"> */}
+          <button className="button is-primary is-medium" onClick={this.submitEntry}>
+            <span onClick={() => this.submitModel()}>Submit</span>
           </button>
           {/* <script>$('div#froala-editor').froalaEditor('html.get')</script> */}
-        </NavLink>
+        {/* </NavLink> */}
+        </div>
       </section>
     );
   }

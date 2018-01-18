@@ -2,6 +2,8 @@ const router = require('express').Router()
 const User = require('../db/models/user')
 module.exports = router
 
+console.log('in auth index.js')
+
 router.post('/login', (req, res, next) => {
   User.findOne({where: {email: req.body.email}})
     .then(user => {
@@ -30,7 +32,8 @@ router.post('/signup', (req, res, next) => {
     })
 })
 
-router.post('/logout', (req, res) => {
+router.use('/logout', (req, res) => {
+  console.log('in logout')
   req.logout()
   res.redirect('/')
 })
