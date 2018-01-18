@@ -5,10 +5,10 @@ import React, { Component } from 'react';
 const Signup = () => {
   return (
     <div className="block">
-      <div className="formBackground">
-        <div className="formContainer">
+      <div className="signup-background">
+        <div className="signup-container">
           <h1 className="title">Sign up</h1>
-          <a href="/auth/google" className="button is-danger signupButton"><i className="fa fa-google" aria-hidden="true"></i>   |   Sign up with Google</a>
+          <a href="/auth/google" className="button is-danger signup-button"><i className="fa fa-google" aria-hidden="true"></i>   |   Sign up with Google</a>
         </div>
       </div>
     </div>

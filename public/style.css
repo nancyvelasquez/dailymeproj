@@ -1,11 +1,25 @@
-/* Home */
-
-#bigImage {
-    background-image: url("https://images.unsplash.com/photo-1484544808355-8ec84e534d75?auto=format&fit=crop&w=1366&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D");
+* {
+    box-sizing: border-box;
 }
 
-#userHomeImage {
-    background-image: url("https://images.unsplash.com/photo-1506968430777-bf7784a87f23?auto=format&fit=crop&w=1351&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D");
+body {-webkit-text-size-adjust:100%;}
+
+/* Home */
+
+#homepage-image {
+    background-image: url("https://images.unsplash.com/photo-1484544808355-8ec84e534d75?auto=format&fit=crop&w=1366&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D");
+    max-width: 100%;
+}
+
+#userhome-image {
+    background-image: url("https://images.unsplash.com/photo-1509624776920-0fac24a9dfda?auto=format&fit=crop&w=1050&q=80");
+    max-width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+}
+
+.hero.is-info .title {
+    color: #00d1b2;
 }
 
 .title {
@@ -29,11 +43,11 @@ div.container .homepage {
     padding-top: 8%;
 }
 
-.homepageSub {
+.homepage-subtitle {
     padding-bottom: 5%;
 }
 
-.centeredButton {
+.homepage-signup-button {
     align-content: center;
 }
 
@@ -43,7 +57,7 @@ div.notification {
     width: 70%;
 }
 
-.signupButton {
+.homepage-signup-container {
     text-align: center;
 }
 
@@ -81,7 +95,7 @@ span {
     vertical-align: middle;
 }
 
-.userPhoto {
+.navbar-user-photo {
     background-size: 32px 32px;
     border-radius: 50%;
     display: inline-block;
@@ -93,14 +107,15 @@ span {
     z-index: 0;
 }
 
-/* Dropdown Button */
 
-.greeting {
+/* Dropdown Menu */
+
+.navbar-greeting {
     margin-right: 20px;
 }
 
 .dropbtn {
-    background-color: #4CAF50;
+    background-color: #00d1b2;
     color: white;
     padding: 10px;
     font-size: 12px;
@@ -119,7 +134,7 @@ span {
     text-align: center;
     background-color: white;
     min-width: 120px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -132,20 +147,22 @@ span {
 
 .dropdown-content a:hover {
     background-color: #00d1b2;
+    color: white;
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
+    color: white;
 }
 
 .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
+    background-color: #00d1b2;
 }
 
 
 /* Forms */
 
-.formContainer {
+.signup-container {
     width: 40%;
     background-color: white;
     padding: 2%;
@@ -163,19 +180,19 @@ span {
     padding-bottom: 10%;
 }
 
-
-.formBackground {
+.signup-background {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
 }
 
-.googleSignup {
+.google-signup {
     height: 55px;
 }
 
-.signupButton {
+.signup-button {
     display: block;
 }
+
 
 /* Break */
 
@@ -185,9 +202,10 @@ span {
     padding: 10%;
 }
 
-/* Paper Backgrounds */
 
-.whitePaper {
-    background-color: white; 
-    background-size: 70% 1em;
+/* Button */
+
+.button.is-primary {
+    background-color: #00d1b2;
+    /* #00d1b2 40E0D0 */
 }

@@ -21,9 +21,9 @@ class UserHome extends Component {
   render() {
     return(
       <section className = "hero is-info is-large" >
-        <div className="hero-body heroImage" id="userHomeImage">
+        <div className="hero-body heroImage" id="userhome-image">
           <div className="container">
-            <h1 className="title homepage">Today is { this.state.date }</h1>
+          <h1 className="title homepage">Today is { this.state.date }</h1>
           </div>
           <br></br>
           <PaperInput />

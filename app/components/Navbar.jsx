@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom'
 
 class Navbar extends Component {
   render() {
-    console.log('user', this.props.user)
     return (
       <nav className="navbar is-transparent">
         <div className="navbar-brand">
@@ -18,12 +17,11 @@ class Navbar extends Component {
             {
               this.props.user.firstName ? (
                 <div className="dropdown">
-                  <span className="greeting">Hi, {this.props.user.firstName}!</span>
-                  <span className="userPhoto dropbtn" style={{ backgroundImage: `url(${this.props.user.photo})` }}></span>
+                  <span className="navbar-greeting">Hi, {this.props.user.firstName}!</span>
+                  <span className="navbar-user-photo dropbtn" style={{ backgroundImage: `url(${this.props.user.photo})` }}></span>
                   <div className="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="#">Today</a>
+                    <a href="#">Settings</a>
                   </div>
                 </div>
               ) : (
