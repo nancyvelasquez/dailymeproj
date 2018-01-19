@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom';
 import { NavLink } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { entryPost } from '../reducers/entry';
 
 import FroalaEditor from 'react-froala-wysiwyg';
 
@@ -15,15 +17,14 @@ class PaperInput extends Component {
   }
 
   handleModelChange (model) {
-    console.log('this is the model', model)
     this.setState({
       model: model
     })
   }
 
-  submitModel (evt) {
-    console.log('this is being submitted', this.state.model)
-  }
+  // submitModel () {
+  //   this.props.entryPost(this.state.model)
+  // }
 
   render() {
     return (
@@ -32,16 +33,22 @@ class PaperInput extends Component {
           <FroalaEditor tag="textarea" entry={this.state.model} config={this.config} onModelChange={this.handleModelChange}/>
         </div>
         <div className="paperinput-entry">
-        {/* <NavLink to="/signup"> */}
           <button className="button is-primary is-medium" onClick={this.submitEntry}>
-            <span onClick={() => this.submitModel()}>Submit</span>
+            <span onClick={(evt) => submitModel(this.state.model)}>Save</span>
           </button>
-          {/* <script>$('div#froala-editor').froalaEditor('html.get')</script> */}
-        {/* </NavLink> */}
         </div>
       </section>
     );
   }
 }
 
-export default PaperInput
+// /* ----------------- REDUX ----------------- */
+
+const mapDispatch = (dispatch) => ({
+  submitModel () {
+    console.log('this is the entry')
+    dispatch(entryPost(this.state.model))
+  }
+})
+
+export default connect(null, mapDispatch)(PaperInput)

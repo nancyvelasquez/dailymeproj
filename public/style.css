@@ -212,7 +212,7 @@ span {
 
 /* Paper Input Component */
 
-.paperinput-entry a {
+.paperinput-entry {
     margin-top: 20px;
     margin-right: 30px;
     float: right;

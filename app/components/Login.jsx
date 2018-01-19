@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux'
-// import { getUser, auth } from '../reducers/user';
 
 const Login = () => {
   return (
