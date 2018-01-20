@@ -18,7 +18,7 @@ router.get('/', (req, res, next) => {
 })
 
 router.post('/', (req, res, next) => {
-  Entry.create(req.body)
+  Entry.findOrCreate(req.body)
   .then((newEntry) => {
     res.json(newEntry)
   })

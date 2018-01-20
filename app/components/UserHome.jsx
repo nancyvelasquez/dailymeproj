@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import PaperInput from './PaperInput'
+import Calendar from './Calendar'
 
 var monthNames = ["January", "February", "March", "April", "May", "June",
-"July", "August", "September", "October", "November", "December"
+  "July", "August", "September", "October", "November", "December"
 ];
 
 
@@ -19,11 +20,12 @@ class UserHome extends Component {
   }
 
   render() {
-    return(
-      <section className = "hero is-info is-large" >
+    return (
+      <section className="hero is-info is-large" >
         <div className="hero-body heroImage" id="userhome-image">
           <div className="container">
-          <h1 className="title homepage">Today is { this.state.date }</h1>
+            {/* <span className="title homepage">Today is {this.state.date}</span> */}
+            <Calendar />
           </div>
           <br></br>
           <PaperInput />
