@@ -17,7 +17,7 @@ class Calendar extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="react-calendar">
         <SingleDatePicker
           id="date_input"
           date={this.state.date}
