@@ -20,11 +20,12 @@ const postEntry = entry => ({ type: POST_ENTRY, entry })
  * THUNK CREATORS
  */
 
-export const entryPost = (entry) => dispatch =>
-    axios
-      .post('/api/entries', entry)
-      .then(res => dispatch(postEntry(res.data || defaultEntry)))
-      .catch(err => console.log(err))
+export const entryPost = (entry, id) => dispatch => {
+  axios
+  .post('/api/entries', { entryLog: entry, userId: id })
+  .then(res => dispatch(postEntry(res.data || defaultEntry)))
+  .catch(err => console.log(err))
+}
   
   /**
 /**

@@ -18,10 +18,8 @@ router.get('/', (req, res, next) => {
 })
 
 router.post('/', (req, res, next) => {
-  console.log('this is the req.body')
   Entry.create(req.body)
   .then((newEntry) => {
-    console.log('made it into entry', newEntry)
     res.json(newEntry)
   })
   .catch(next)

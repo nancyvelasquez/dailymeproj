@@ -13,29 +13,24 @@ class PaperInput extends Component {
       model: ''
     }
     this.handleModelChange = this.handleModelChange.bind(this)
-    this.submitModel = this.submitModel.bind(this)
   }
 
-  handleModelChange (model) {
+  handleModelChange(model) {
     this.setState({
       model: model
     })
   }
 
-  // submitModel () {
-  //   this.props.entryPost(this.state.model)
-  // }
-
   render() {
     return (
       <section>
         <div className="container">
-          <FroalaEditor tag="textarea" entry={this.state.model} config={this.config} onModelChange={this.handleModelChange}/>
-        </div>
-        <div className="paperinput-entry">
-          <button className="button is-primary is-medium" onClick={this.submitEntry}>
-            <span onClick={(evt) => submitModel(this.state.model)}>Save</span>
-          </button>
+          <FroalaEditor tag="textarea" entry={this.state.model} config={this.config} onModelChange={this.handleModelChange} />
+          <div className="paperinput-entry">
+            <button className="button is-primary is-medium" onClick={() => this.props.submitModel(this.state.model, this.props.user.id)}>
+              <span>Save</span>
+            </button>
+          </div>
         </div>
       </section>
     );
@@ -44,11 +39,14 @@ class PaperInput extends Component {
 
 // /* ----------------- REDUX ----------------- */
 
-const mapDispatch = (dispatch) => ({
-  submitModel () {
-    console.log('this is the entry')
-    dispatch(entryPost(this.state.model))
+const mapState = (state) => ({
+  user: state.user
+})
+
+const mapDispatch = (dispatch, ownProps) => ({
+  submitModel(entryText, id) {
+    dispatch(entryPost(entryText, id))
   }
 })
 
-export default connect(null, mapDispatch)(PaperInput)
+export default connect(mapState, mapDispatch)(PaperInput)
