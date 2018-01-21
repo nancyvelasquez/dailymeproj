@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react';
+import moment from 'moment'
 
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
@@ -16,10 +17,12 @@ class Calendar extends Component {
   }
 
   render() {
+    console.log(moment(this.state.date).toDate())
     return (
       <div className="react-calendar">
         <SingleDatePicker
           id="date_input"
+          showClearDate={true}
           date={this.state.date}
           focused={this.state.focused}
           onDateChange={(date) => { this.setState({ date }); }}
