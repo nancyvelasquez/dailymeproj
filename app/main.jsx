@@ -26,7 +26,7 @@ const MeDaily = ({ user, children }) => (
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
-        <Route path="/home" component={UserHome} />
+        <Route path="/notes" component={UserHome} />
         <Route path="*" component={NotFound} />
     </Switch>
     <Footer />

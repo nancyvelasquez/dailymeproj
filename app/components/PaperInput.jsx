@@ -27,7 +27,7 @@ class PaperInput extends Component {
         <div className="container">
           <FroalaEditor tag="textarea" entry={this.state.model} config={this.config} onModelChange={this.handleModelChange} />
           <div className="paperinput-entry">
-            <button className="button is-primary is-medium" onClick={() => this.props.submitModel(this.state.model, this.props.user.id)}>
+            <button className="button is-primary is-medium" onClick={() => this.props.submitModel(this.state.model, this.props.user.id, this.props.date)}>
               <span>Save</span>
             </button>
           </div>
@@ -37,15 +37,16 @@ class PaperInput extends Component {
   }
 }
 
-// /* ----------------- REDUX ----------------- */
+/* ----------------- REDUX ----------------- */
 
 const mapState = (state) => ({
-  user: state.user
+  user: state.user,
+  date: state.entry.myDate
 })
 
-const mapDispatch = (dispatch, ownProps) => ({
-  submitModel(entryText, id) {
-    dispatch(entryPost(entryText, id))
+const mapDispatch = (dispatch) => ({
+  submitModel(entryText, id, date) {
+    return dispatch(entryPost(entryText, id, date))
   }
 })
 
