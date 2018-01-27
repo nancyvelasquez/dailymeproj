@@ -9,10 +9,6 @@ import 'react-dates/lib/css/_datepicker.css';
 
 import { SingleDatePicker } from 'react-dates';
 
-const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-];
-
 class Calendar extends Component {
   constructor(props) {
     super(props);
@@ -22,13 +18,21 @@ class Calendar extends Component {
     };
   }
 
+  // componentWillUpdate(nextProps, nextState) {
+  //   console.log('nextprops', nextProps, nextState)
+  // }
+
+  // render() {
+
+  //   const currentDate = new Date();
+  //   const jsonDate = currentDate.toJSON();
+  //   const date = this.state.date ? moment(this.state.date).format() : jsonDate;
+  //   this.props.submitDate(date)
+
   render() {
-    const today = new Date(),
-      monthNum = today.getMonth(),
-      weekdayNum = today.getDay(),
-      date = !this.state.date ? `${monthNames[monthNum]} ${today.getDate()} ${today.getFullYear()}` : (moment(this.state.date).format('MMM DD YYYY'))
-    
-      this.props.submitDate(date)
+    const date = !this.state.date ? new Date().toJSON() : (moment(this.state.date).format('MMM DD YYYY'))
+
+    this.props.submitDate(date)
 
     return (
       <div className="react-calendar">

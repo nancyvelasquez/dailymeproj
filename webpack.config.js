@@ -14,8 +14,7 @@ module.exports = {
     extensions: ['.js', '.jsx', '.json', 'css', '*'],
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
@@ -25,14 +24,15 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif)$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192
-            }
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 8192
           }
-        ]
+        }]
+      }, {
+        test: /\.scss$/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader']
       }, {
         test: /\.css$/,
         loader: 'style-loader!css-loader?root=.'
@@ -55,8 +55,8 @@ module.exports = {
       }
     ],
   },
-  plugins: productionMode
-    ? [
+  plugins: productionMode ?
+    [
       new webpack.DefinePlugin({
         'process.env': {
           NODE_ENV: JSON.stringify('production'),
@@ -69,6 +69,8 @@ module.exports = {
         $: 'jquery',
         jQuery: 'jquery'
       }),
-    ]
-    : [new LiveReloadPlugin({ appendScriptTag: true })],
+    ] :
+    [new LiveReloadPlugin({
+      appendScriptTag: true
+    })],
 };

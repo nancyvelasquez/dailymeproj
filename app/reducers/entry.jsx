@@ -23,9 +23,14 @@ const enterDate = date => ({ type: ENTER_DATE, date })
  */
 
 export const entryPost = (entry, id, date) => dispatch => {
+  console.log('hello', date)
   axios
   .post('/api/entries', { entryLog: entry, userId: id, myDate: date })
-  .then(res => dispatch(postEntry(res.data || defaultEntry)))
+  .then(res => res.data)
+  .then(foundOrCreatedEntry => {
+    console.log('this is the found or created', foundOrCreatedEntry)
+    dispatch(postEntry(foundOrCreatedEntry))
+  })
   .catch(err => console.log(err))
 }
 

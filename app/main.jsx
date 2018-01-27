@@ -5,6 +5,9 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import 'froala-editor/js/froala_editor.pkgd.min.js';
 import 'froala-editor/css/froala_style.min.css';
 import 'froala-editor/css/froala_editor.pkgd.min.css';
+import './style/style.scss';
+
+
 import $ from 'jquery';
 window.$ = $;
 
@@ -23,11 +26,11 @@ const MeDaily = ({ user, children }) => (
   <div>
     <Navbar />
     <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/login" component={Login} />
-        <Route path="/signup" component={Signup} />
-        <Route path="/notes" component={UserHome} />
-        <Route path="*" component={NotFound} />
+      <Route exact path="/" component={Home} />
+      <Route path="/login" component={Login} />
+      <Route path="/signup" component={Signup} />
+      <Route path="/notes" component={UserHome} />
+      <Route path="*" component={NotFound} />
     </Switch>
     <Footer />
   </div>
@@ -36,7 +39,7 @@ const MeDaily = ({ user, children }) => (
 render(
   <Provider store={store}>
     <Router>
-      <MeDaily/>
+      <MeDaily />
     </Router>
   </Provider>,
   document.getElementById('app')

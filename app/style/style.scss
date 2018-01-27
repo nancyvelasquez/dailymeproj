@@ -1,3 +1,7 @@
+// variables
+$vivid-blue: #00d1b2;
+$black: black;
+
 * {
     box-sizing: border-box;
 }
@@ -7,16 +11,18 @@
     margin-top: 2%;
 }
 
-
 .container.calendar {
     text-align: center;
     margin-top: 5%;
     z-index: 10;
 }
 
-/* body {-webkit-text-size-adjust:100%;} */
+body {
+    background-color: $black;
+}
 
-/* Home */
+
+// Home
 
 #homepage-image {
     background-image: url("https://images.unsplash.com/photo-1484544808355-8ec84e534d75?auto=format&fit=crop&w=1366&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D");
@@ -26,7 +32,6 @@
 
 #userhome-image {
     background-image: url("https://images.unsplash.com/photo-1509624776920-0fac24a9dfda?auto=format&fit=crop&w=1050&q=80");
-    /* max-width: 100%; */
     height: auto;
     background-repeat: no-repeat;
     background-size: cover;
@@ -38,7 +43,7 @@
 }
 
 .hero.is-info .title {
-    color: #00d1b2;
+    color: $vivid-blue;
 }
 
 .title {
@@ -55,7 +60,7 @@
 }
 
 .hero.is-info .title.benefits {
-    color: black;
+    color: $black;
 }
 
 div.container .homepage {
@@ -80,10 +85,11 @@ div.notification {
     text-align: center;
 }
 
-/* Navbar */
+
+// Navbar
 
 .navbar {
-    background-color: black;
+    background-color: $black;
 }
 
 .navbar-item {
@@ -102,7 +108,7 @@ div.notification {
 }
 
 .footer {
-    background-color: black;
+    background-color: $black;
     color: white;
 }
 
@@ -126,14 +132,14 @@ span {
 }
 
 
-/* Dropdown Menu */
+// Dropdown Menu
 
 .navbar-greeting {
     margin-right: 20px;
 }
 
 .dropbtn {
-    background-color: #00d1b2;
+    background-color: $vivid-blue;
     color: white;
     padding: 10px;
     font-size: 12px;
@@ -157,14 +163,14 @@ span {
 }
 
 .dropdown-content a {
-    color: black;
+    color: $black;
     padding: 8px 10px;
     text-decoration: none;
     display: block;
 }
 
 .dropdown-content a:hover {
-    background-color: #00d1b2;
+    background-color: $vivid-blue;
     color: white;
 }
 
@@ -174,11 +180,11 @@ span {
 }
 
 .dropdown:hover .dropbtn {
-    background-color: #00d1b2;
+    background-color: $vivid-blue;
 }
 
 
-/* Forms */
+// Forms
 
 .signup-container {
     width: 40%;
@@ -212,7 +218,7 @@ span {
 }
 
 
-/* Break */
+// Break
 
 .block {
     background-image: url("https://images.unsplash.com/photo-1484544808355-8ec84e534d75?auto=format&fit=crop&w=1366&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D");
@@ -221,14 +227,14 @@ span {
 }
 
 
-/* Button */
+// Button 
 
 .button.is-primary {
-    background-color: #00d1b2;
-    /* #00d1b2 40E0D0 */
+    background-color: $vivid-blue;
 }
 
-/* Paper Input Component */
+
+// Paper Input Component
 
 .paperinput-entry {
     margin-top: 20px;
@@ -236,9 +242,10 @@ span {
     float: right;
 }
 
-/* Calendar / UserHome */
+
+// Calendar / UserHome 
 
 #userhome-calendar {
     font-size: 2rem;
-    color: black;
+    color: $black;
 }
