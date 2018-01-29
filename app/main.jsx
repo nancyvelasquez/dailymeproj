@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import 'froala-editor/js/froala_editor.pkgd.min.js';
 import 'froala-editor/css/froala_style.min.css';
 import 'froala-editor/css/froala_editor.pkgd.min.css';
-import './style/style.scss';
+
 
 
 import $ from 'jquery';
@@ -13,6 +13,7 @@ window.$ = $;
 
 import { Provider } from 'react-redux';
 import Footer from './components/Footer'
+import './style/style.scss';
 import Navbar from './components/Navbar'
 import Login from './components/Login'
 import Signup from './components/Signup'
