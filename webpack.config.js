@@ -1,6 +1,4 @@
 const LiveReloadPlugin = require('webpack-livereload-plugin');
-const productionMode = require('./index.js').isProduction;
-
 const webpack = require('webpack');
 
 module.exports = {
@@ -52,20 +50,18 @@ module.exports = {
       }
     ],
   },
-  plugins: productionMode ?
-    [
+  plugins: process.env.NODE_ENV === 'production' ? [
       new webpack.DefinePlugin({
         'process.env': {
           NODE_ENV: JSON.stringify('production'),
         },
       }),
       new webpack.optimize.UglifyJsPlugin(),
-      new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery'
-      }),
-    ] :
-    [new LiveReloadPlugin({
-      appendScriptTag: true
-    })],
+      // new webpack.ProvidePlugin({
+      //   $: 'jquery',
+      //   jQuery: 'jquery'
+      // }),
+    ] : [
+      new LiveReloadPlugin({ appendScriptTag: true })
+    ],
 };

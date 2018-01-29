@@ -13,7 +13,7 @@ window.$ = $;
 
 import { Provider } from 'react-redux';
 import Footer from './components/Footer'
-import './style/style.scss';
+import './style.scss';
 import Navbar from './components/Navbar'
 import Login from './components/Login'
 import Signup from './components/Signup'
