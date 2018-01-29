@@ -17,7 +17,7 @@ module.exports = {
     rules: [{
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader',ß
+        loader: 'babel-loader',
       },
       {
         test: /\.(png|jpg|gif)$/,
