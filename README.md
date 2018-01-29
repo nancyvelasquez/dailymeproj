@@ -1,6 +1,6 @@
 # dailymeproj
 
-Le Daily Moi is a daily tracker where users can write down notes, activities, etc. Users will be able to notice short-term and long-term trends to maximize their productivity, health, and organization.
+Le Daily Moi is a daily tracker where users can write down notes, activities, etc. Users will be able to notice short-term and long-term trends to maximize their productivity, health, and organization. See updates/progress at ledailymoi.com.
 
 ## Getting Started
 
