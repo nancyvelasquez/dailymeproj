@@ -26,42 +26,26 @@ router.post('/', (req, res, next) => {
         myDate: req.body.myDate,
       },
     })
-    .then(found => {
-      if(!found) {
-        Entry.create(req.body)
-        .then(([user, created]) => {
-          console.log('created', user, created)
-          res.json(user)
+    .then(entry => {
+      if (entry) {
+        Entry.update({
+          entryLog: req.body.entryLog
+        }, {
+          where: {
+            userId: req.body.userId,
+            myDate: req.body.myDate
+          },
+          returning: true
+        })
+        .then(updatedEntry => {
+          res.json(updatedEntry)
         })
       } else {
-        res.json(found)
-      } 
+        Entry.create(req.body)
+        .then(createdEntry => {
+          res.status(201).json(createdEntry)
+        })
+      }
     })
     .catch(next)
 })
-
-
-
-
-// Order.findOrCreate({
-//   where: {
-//     user_id: +req.body.user,
-//     status: 'notOrdered'
-//   },
-//   defaults: {
-//     user_id: +req.body.user,
-//     status: 'notOrdered'
-//   }
-// })
-
-// .then(([order, created]) => {
-//   console.log('Order ', order, 'This was created ', created)
-//   if (!created) {
-//     return res.json(order)
-//   } else {
-//     return res.status(201).json(order)
-//   }
-// })
-
-//   .catch(next)
-// }

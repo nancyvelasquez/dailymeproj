@@ -22,18 +22,14 @@ class PaperInput extends Component {
     })
   }
 
-  componentDidMount() {
-    this.setState({ date: this.props.date })
-  }
-
   render() {
-    console.log('tihs.props.date', this.props.date)
+    const chosenDate = this.props.date;
     return (
       <section>
         <div className="container">
           <FroalaEditor tag="textarea" entry={this.state.model} config={this.config} onModelChange={this.handleModelChange} />
           <div className="paperinput-entry">
-            <button className="button is-primary is-medium" onMouseUp={() => this.props.submitModel(this.state.model, this.props.user.id, this.state.date)}>
+            <button className="button is-primary is-medium" onMouseUp={() => this.props.submitModel(this.state.model, this.props.user.id, chosenDate)}>
               <span>Save</span>
             </button>
           </div>

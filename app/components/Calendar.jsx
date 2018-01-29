@@ -18,17 +18,6 @@ class Calendar extends Component {
     };
   }
 
-  // componentWillUpdate(nextProps, nextState) {
-  //   console.log('nextprops', nextProps, nextState)
-  // }
-
-  // render() {
-
-  //   const currentDate = new Date();
-  //   const jsonDate = currentDate.toJSON();
-  //   const date = this.state.date ? moment(this.state.date).format() : jsonDate;
-  //   this.props.submitDate(date)
-
   render() {
     const date = !this.state.date ? new Date().toJSON() : (moment(this.state.date).format('MMM DD YYYY'))
 

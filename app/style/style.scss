@@ -8,11 +8,12 @@ $black: black;
 .container {
     text-align: center;
     margin-top: 2%;
-    &:calendar {
-        text-align: left;
-        margin-top: 5%;
-        z-index: 10;
-    }
+}
+
+.container.calendar {
+    text-align: center;
+    margin-top: 5%;
+    z-index: 10;
 }
 
 body {
