@@ -62,9 +62,7 @@ module.exports = {
           NODE_ENV: JSON.stringify('production'),
         },
       }),
-      new webpack.optimize.UglifyJsPlugin({
-        sourceMap: true,
-      }),
+      new webpack.optimize.UglifyJsPlugin(),
       new webpack.ProvidePlugin({
         $: 'jquery',
         jQuery: 'jquery'
