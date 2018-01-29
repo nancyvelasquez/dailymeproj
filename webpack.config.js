@@ -11,16 +11,13 @@ module.exports = {
   },
   devtool: 'cheap-module-eval-source-map',
   resolve: {
-    extensions: ['.js', '.jsx', '.json', 'css', '*'],
+    extensions: ['.js', '.jsx', '.json', '.css', '.scss', '*'],
   },
   module: {
     rules: [{
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader',
-        // options: {
-        //   presets: ['react-app'],
-        // },
+        loader: 'babel-loader',ß
       },
       {
         test: /\.(png|jpg|gif)$/,
