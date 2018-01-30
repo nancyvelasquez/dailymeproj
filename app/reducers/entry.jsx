@@ -42,9 +42,9 @@ export const dateEntry = (date) => dispatch => {
 export default function(state = defaultEntry, action) {
   switch (action.type) {
     case POST_ENTRY:
-      return { ...state, entry: action.entry };
+      return { ...state, entry: action.entry }
     case ENTER_DATE:
-      return { ...state, myDate: action.date };
+      return { ...state, myDate: action.date }
     default:
       return state
   }

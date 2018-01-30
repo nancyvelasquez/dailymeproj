@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 // import { connect } from 'react-redux'
-// import { getUser, auth } from '../reducers/user';
+// import { getUser, auth } from '../reducers/user'
 
 const Signup = () => {
   return (
@@ -15,7 +15,7 @@ const Signup = () => {
   )
 }
 
-export default Signup;
+export default Signup
 
 // /* ----------------- REDUX ----------------- */
 

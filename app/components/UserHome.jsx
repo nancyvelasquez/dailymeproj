@@ -5,7 +5,7 @@ import Calendar from './Calendar'
 
 var monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
-];
+]
 
 
 class UserHome extends Component {
@@ -16,7 +16,7 @@ class UserHome extends Component {
     //   date = `${monthNames[monthNum]} ${today.getDate()}, ${today.getFullYear()}`
     // this.state = {
     //   date: date
-    // };
+    // }
   }
 
   render() {
@@ -32,7 +32,7 @@ class UserHome extends Component {
           </section>
         </div>
       </section>
-    );
+    )
   }
 }
 

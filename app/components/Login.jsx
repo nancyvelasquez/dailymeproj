@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 const Login = () => {
   return (
@@ -13,7 +13,7 @@ const Login = () => {
   )
 }
 
-export default Login;
+export default Login
 
 // /* ----------------- REDUX ----------------- */
 

@@ -1,5 +1,5 @@
-import { combineReducers } from 'redux';
-import user from './user';
+import { combineReducers } from 'redux'
+import user from './user'
 import entry from './entry'
 
 const rootReducer = combineReducers({
@@ -7,4 +7,4 @@ const rootReducer = combineReducers({
     entry
 })
 
-export default rootReducer;
+export default rootReducer

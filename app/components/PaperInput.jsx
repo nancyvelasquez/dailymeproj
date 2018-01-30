@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { entryPost } from '../reducers/entry';
+import { entryPost } from '../reducers/entry'
 
-import FroalaEditor from 'react-froala-wysiwyg';
+import FroalaEditor from 'react-froala-wysiwyg'
 
 class PaperInput extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       model: '', 
       date: ''
@@ -23,7 +23,7 @@ class PaperInput extends Component {
   }
 
   render() {
-    const chosenDate = this.props.date;
+    const chosenDate = this.props.date
     return (
       <section>
         <div className="container">
@@ -35,7 +35,7 @@ class PaperInput extends Component {
           </div>
         </div>
       </section>
-    );
+    )
   }
 }
 
