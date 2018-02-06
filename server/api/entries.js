@@ -19,6 +19,24 @@ router.get('/', (req, res, next) => {
     .catch(next)
 })
 
+router.get('/:userId/date/:date', (req, res, next) => {
+  Entry.findOne({
+    where: {
+      userId: req.params.userId,
+      myDate: req.params.date,
+    }
+  })
+  .then(entry => {
+    console.log('this is the found entry', entry)
+    if(entry) {
+      res.json(entry)
+    } else {
+      res.json({ message: 'No Entry Found'})
+    }
+  })
+  .catch(next)
+})
+
 router.post('/', (req, res, next) => {
   Entry.findOne({
       where: {
