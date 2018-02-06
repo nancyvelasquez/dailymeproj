@@ -28,7 +28,7 @@ class ShowPreviousEntry extends Component {
     return (
       <section>
         <div className="container previousEntry">
-        { this.props.entry.entryLog }    
+          <div dangerouslySetInnerHTML={{ __html: this.props.entry.entryLog }} />   
         </div>
       </section>
     )
