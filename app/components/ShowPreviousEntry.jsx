@@ -10,6 +10,7 @@ class ShowPreviousEntry extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      entry: {}
     }
   }
 
@@ -17,10 +18,17 @@ class ShowPreviousEntry extends Component {
     this.props.getSavedEntry(this.props.date, this.props.id)
   }
 
+  shouldComponentUpdate(nextProps) {
+    const diffState = this.state.entry !== nextProps.entry;
+    return diffState;
+  }
+
   render() {
+    console.log('.entry', this.props)
     return (
       <section>
-        <div className="container">      
+        <div className="container previousEntry">
+        { this.props.entry.entryLog }    
         </div>
       </section>
     )
@@ -29,10 +37,9 @@ class ShowPreviousEntry extends Component {
 
 /* ----------------- REDUX ----------------- */
 
-// const mapState = (state) => ({
-//   user: state.user,
-//   date: state.entry.myDate
-// })
+const mapState = (state) => ({
+  entry: state.entry
+})
 
 const mapDispatch = (dispatch) => ({
   getSavedEntry(date, id) {
@@ -40,4 +47,4 @@ const mapDispatch = (dispatch) => ({
   }
 })
 
-export default connect(null, mapDispatch)(ShowPreviousEntry)
+export default connect(mapState, mapDispatch)(ShowPreviousEntry)
