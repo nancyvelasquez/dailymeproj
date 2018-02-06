@@ -7,8 +7,8 @@ const Entry = db.define('entry', {
     allowNull: false,
   },
   myDate: {
-    type: Sequelize.DATE,
-    defaultValue: Sequelize.NOW,
+    type: Sequelize.STRING,
+    allowNull: false,
   }
 })
 

@@ -19,8 +19,7 @@ class Calendar extends Component {
   }
 
   render() {
-    const date = !this.state.date ? new Date().toJSON() : (moment(this.state.date).format('MMM DD YYYY'))
-
+    const date = !this.state.date ? (new Date().toJSON()).slice(0, 10) : (moment(this.state.date).format('YYYY-MM-DD'))
     this.props.submitDate(date)
 
     return (
