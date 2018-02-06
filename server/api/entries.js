@@ -27,7 +27,6 @@ router.get('/:userId/date/:date', (req, res, next) => {
     }
   })
   .then(entry => {
-    console.log('this is the found entry', entry)
     if(entry) {
       res.json(entry)
     } else {
