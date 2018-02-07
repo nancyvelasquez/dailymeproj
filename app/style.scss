@@ -236,6 +236,15 @@ span {
 
 // Button 
 .button.is-primary {
+    float: left;
+    margin-right: 10px;
+    background-color: black;
+    // background-color: #d1b200;
+}
+
+.button.is-yellow {
+    float: left;
+    margin-right: 10px;
     background-color: $vivid-blue;
 }
 

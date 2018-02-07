@@ -18,6 +18,8 @@ import Navbar from './components/Navbar'
 import Login from './components/Login'
 import Signup from './components/Signup'
 import UserHome from './components/UserHome'
+import ShowPreviousEntry from './components/ShowPreviousEntry'
+import ShowTodaysSavedEntry from './components/ShowTodaysSavedEntry'
 
 import store from './store';
 import Home from './components/Home';
@@ -30,7 +32,9 @@ const MeDaily = ({ user, children }) => (
       <Route exact path="/" component={Home} />
       <Route path="/login" component={Login} />
       <Route path="/signup" component={Signup} />
-      <Route path="/notes" component={UserHome} />
+      <Route path="/notes/edit/:date" component={ShowTodaysSavedEntry} />
+      <Route path="/notes/edit" component={UserHome} />
+      <Route path="/notes/:date" component={ShowPreviousEntry} />
       <Route path="*" component={NotFound} />
     </Switch>
     <Footer />

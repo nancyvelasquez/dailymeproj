@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 import ShowPreviousEntry from './ShowPreviousEntry'
 import { entryPost } from '../reducers/entry'
@@ -29,16 +29,18 @@ class PaperInput extends Component {
     return (
       <section>
         <div className="container">
-          { isToday ? (
+          {isToday ? (
             <div>
-            <FroalaEditor tag="textarea" entry={this.state.model} config={this.config} onModelChange={this.handleModelChange} />
-            <div className="paperinput-entry">
-              <button className="button is-primary is-medium" onMouseUp={() => this.props.submitModel(this.state.model, this.props.user.id, this.props.date)}>
-                <span>Save</span>
-              </button>
+              <FroalaEditor tag="textarea" entry={this.state.model} config={this.config} onModelChange={this.handleModelChange} />
+              <div className="paperinput-entry">
+                <Link to={`/notes/${this.props.date}`}>
+                  <button className="button is-primary is-medium" onMouseUp={() => this.props.submitModel(this.state.model, this.props.user.id, this.props.date)}>
+                    <span>Save</span>
+                  </button>
+                </Link>
+              </div>
             </div>
-            </div>
-          ) : <ShowPreviousEntry date={this.props.date} id={this.props.user.id}/>         
+          ) : <ShowPreviousEntry date={this.props.date} id={this.props.user.id} />
           }
         </div>
       </section>
