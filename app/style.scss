@@ -31,9 +31,13 @@ body {
 
 // Home
 #homepage-image {
-    background-image: url("https://images.unsplash.com/photo-1484544808355-8ec84e534d75?auto=format&fit=crop&w=1366&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D");
+    background: url("https://images.unsplash.com/photo-1484544808355-8ec84e534d75?auto=format&fit=crop&w=1366&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D") no-repeat center center fixed;
     max-width: 100%;
     height: auto;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 #userhome-image {
