@@ -31,7 +31,7 @@ class PaperInput extends Component {
         <div className="container">
           {isToday ? (
             <div>
-              <FroalaEditor tag="textarea" entry={this.state.model} config={this.config} onModelChange={this.handleModelChange} />
+              <FroalaEditor tag="textarea" entry={this.state.model} config={this.config} onModelChange={this.handleModelChange} />              
               <div className="paperinput-entry">
                 <Link to={`/notes/${this.props.date}`}>
                   <button className="button is-primary is-medium" onMouseUp={() => this.props.submitModel(this.state.model, this.props.user.id, this.props.date)}>
